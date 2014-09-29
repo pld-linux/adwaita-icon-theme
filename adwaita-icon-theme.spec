@@ -21,8 +21,6 @@ Requires(post):	gtk-update-icon-cache
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_pkgconfigdir	%{_datadir}/pkgconfig
-
 %description
 Adwaita icon theme for GNOME environment.
 
@@ -65,4 +63,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/Adwaita/cursors
 %{_iconsdir}/Adwaita/scalable*
 %ghost %{_iconsdir}/Adwaita/icon-theme.cache
-%{_pkgconfigdir}/adwaita-icon-theme.pc
+%{_npkgconfigdir}/adwaita-icon-theme.pc
