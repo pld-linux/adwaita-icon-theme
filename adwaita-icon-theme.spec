@@ -11,7 +11,8 @@ URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	gettext-devel
-BuildRequires:	gtk-update-icon-cache
+BuildRequires:	glib2-devel >= 2.0
+BuildRequires:	gtk-update-icon-cache >= 3.14
 BuildRequires:	intltool >= 0.40.0
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.601
@@ -61,6 +62,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/Adwaita/index.theme
 %{_iconsdir}/Adwaita/[0-9]*x[0-9]*
 %{_iconsdir}/Adwaita/cursors
-%{_iconsdir}/Adwaita/scalable*
+%{_iconsdir}/Adwaita/scalable
+%{_iconsdir}/Adwaita/scalable-up-to-32
 %ghost %{_iconsdir}/Adwaita/icon-theme.cache
 %{_npkgconfigdir}/adwaita-icon-theme.pc
