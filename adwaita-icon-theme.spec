@@ -1,12 +1,12 @@
 Summary:	Adwaita icon theme for GNOME environment
 Summary(pl.UTF-8):	Motyw ikon Adwaita dla środowiska GNOME
 Name:		adwaita-icon-theme
-Version:	3.20
+Version:	3.22.0
 Release:	1
 License:	LGPL v3 or CC-BY-SA v3.0
 Group:		Themes
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/adwaita-icon-theme/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	411be2bd68dd8b0a3c86aca2eb351ce4
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/adwaita-icon-theme/3.22/%{name}-%{version}.tar.xz
+# Source0-md5:	cde51d7dfcbcfa3b8cdc3e5f0df8c799
 URL:		http://www.gnome.org/
 BuildRequires:	autoconf >= 2.53
 BuildRequires:	automake >= 1:1.9
