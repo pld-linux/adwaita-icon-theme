@@ -1,8 +1,8 @@
---- adwaita-icon-theme-40.0/configure.ac.orig	2021-04-17 08:42:12.144282341 +0200
-+++ adwaita-icon-theme-40.0/configure.ac	2021-04-17 08:42:38.205631274 +0200
+--- adwaita-icon-theme-40.1.1/configure.ac.orig	2021-05-06 21:17:52.306001529 +0200
++++ adwaita-icon-theme-40.1.1/configure.ac	2021-05-06 21:36:03.615849763 +0200
 @@ -3,7 +3,6 @@ AC_PREREQ(2.53)
  
- AC_INIT([adwaita-icon-theme], [40.0],
+ AC_INIT([adwaita-icon-theme], [40.1.1],
          [http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme])
 -AC_CANONICAL_HOST
  AC_CONFIG_MACRO_DIR([m4])
