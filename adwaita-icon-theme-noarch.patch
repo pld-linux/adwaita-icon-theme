@@ -1,8 +1,8 @@
---- adwaita-icon-theme-42.0/configure.ac.orig	2022-04-16 20:48:00.005672381 +0200
-+++ adwaita-icon-theme-42.0/configure.ac	2022-04-16 20:50:47.414765448 +0200
+--- adwaita-icon-theme-43/configure.ac.orig	2023-05-15 21:37:42.122934143 +0200
++++ adwaita-icon-theme-43/configure.ac	2023-05-15 21:55:46.540392683 +0200
 @@ -3,7 +3,6 @@ AC_PREREQ(2.53)
  
- AC_INIT([adwaita-icon-theme], [42.0],
+ AC_INIT([adwaita-icon-theme], [43],
          [http://bugzilla.gnome.org/enter_bug.cgi?product=adwaita-icon-theme])
 -AC_CANONICAL_HOST
  AC_CONFIG_MACRO_DIR([m4])
