@@ -1,17 +1,16 @@
 Summary:	Adwaita icon theme for GNOME environment
 Summary(pl.UTF-8):	Motyw ikon Adwaita dla środowiska GNOME
 Name:		adwaita-icon-theme
-Version:	44.0
+Version:	45.0
 Release:	1
 License:	LGPL v3 or CC-BY-SA v3.0
 Group:		Themes
-Source0:	https://download.gnome.org/sources/adwaita-icon-theme/44/%{name}-%{version}.tar.xz
-# Source0-md5:	1abae78e6cd50d4055b5c88ffe8b56a5
-Patch0:		%{name}-noarch.patch
+Source0:	https://download.gnome.org/sources/adwaita-icon-theme/45/%{name}-%{version}.tar.xz
+# Source0-md5:	5407d7921f717e837341bca9bb1bc50b
 URL:		https://www.gnome.org/
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.9
 BuildRequires:	gtk-update-icon-cache
+BuildRequires:	meson >= 0.64.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.19
 BuildRequires:	rpmbuild(macros) >= 1.601
 BuildRequires:	tar >= 1:1.22
@@ -29,21 +28,16 @@ Motyw ikon Adwaita dla środowiska GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__aclocal}
-%{__autoconf}
-%{__automake}
-%configure \
-	GTK_UPDATE_ICON_CACHE=/bin/true
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install \
-	install_sh="install -p" \
-	DESTDIR=$RPM_BUILD_ROOT
+
+%ninja_install -C build
 
 > $RPM_BUILD_ROOT%{_iconsdir}/Adwaita/icon-theme.cache
 
