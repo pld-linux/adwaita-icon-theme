@@ -1,18 +1,18 @@
 Summary:	Adwaita icon theme for GNOME environment
 Summary(pl.UTF-8):	Motyw ikon Adwaita dla środowiska GNOME
 Name:		adwaita-icon-theme
-Version:	47.0
+Version:	48.0
 Release:	1
 License:	LGPL v3 or CC-BY-SA v3.0
 Group:		Themes
-Source0:	https://download.gnome.org/sources/adwaita-icon-theme/47/%{name}-%{version}.tar.xz
-# Source0-md5:	b3863567f8019b056695cb51f4e0abc4
+Source0:	https://download.gnome.org/sources/adwaita-icon-theme/48/%{name}-%{version}.tar.xz
+# Source0-md5:	2153b7a779be8d3d4281ffd60a2cdf63
 URL:		https://www.gnome.org/
 BuildRequires:	gtk-update-icon-cache
 BuildRequires:	meson >= 0.64.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.19
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post):	gtk-update-icon-cache >= 3.14
@@ -30,14 +30,14 @@ Motyw ikon Adwaita dla środowiska GNOME.
 %setup -q
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 > $RPM_BUILD_ROOT%{_iconsdir}/Adwaita/icon-theme.cache
 
@@ -47,15 +47,19 @@ rm -rf $RPM_BUILD_ROOT
 %post
 %update_icon_cache Adwaita
 
+%postun
+if [ "$1" != "0" ]; then
+	%update_icon_cache Adwaita
+fi
+
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS COPYING NEWS
 %dir %{_iconsdir}/Adwaita
 %{_iconsdir}/Adwaita/index.theme
-%{_iconsdir}/Adwaita/[0-9]*x[0-9]*
+%{_iconsdir}/Adwaita/16x16
 %{_iconsdir}/Adwaita/cursors
 %{_iconsdir}/Adwaita/scalable
 %{_iconsdir}/Adwaita/symbolic
-%{_iconsdir}/Adwaita/symbolic-up-to-32
 %ghost %{_iconsdir}/Adwaita/icon-theme.cache
 %{_npkgconfigdir}/adwaita-icon-theme.pc
